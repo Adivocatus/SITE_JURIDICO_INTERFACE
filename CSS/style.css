@@ -471,3 +471,246 @@ body{
         display:none;
     }
 }
+
+/* ==========================================
+MODAIS
+========================================== */
+
+.modal {
+
+
+position: fixed;
+
+top: 0;
+left: 0;
+
+width: 100%;
+height: 100%;
+
+background: rgba(0, 0, 0, 0.85);
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+padding: 20px;
+
+z-index: 9999;
+
+opacity: 0;
+
+visibility: hidden;
+
+transition: .3s;
+
+
+}
+
+.modal.ativo {
+
+
+opacity: 1;
+
+visibility: visible;
+
+
+}
+
+.modal-conteudo {
+
+
+position: relative;
+
+width: 100%;
+
+max-width: 550px;
+
+max-height: 90vh;
+
+overflow-y: auto;
+
+background: #151515;
+
+border: 1px solid var(--gold);
+
+padding: 45px;
+
+transform: translateY(30px);
+
+transition: .3s;
+
+
+}
+
+.modal.ativo .modal-conteudo {
+
+
+transform: translateY(0);
+
+
+}
+
+.modal-conteudo h2 {
+
+
+color: white;
+
+font-family: 'Cormorant Garamond', serif;
+
+font-size: 40px;
+
+margin-bottom: 10px;
+
+
+}
+
+.modal-descricao {
+
+
+color: #aaa;
+
+line-height: 1.7;
+
+margin-bottom: 25px;
+
+
+}
+
+.modal-fechar {
+
+
+position: absolute;
+
+top: 15px;
+
+right: 20px;
+
+background: transparent;
+
+border: none;
+
+color: #aaa;
+
+font-size: 32px;
+
+cursor: pointer;
+
+transition: .3s;
+
+
+}
+
+.modal-fechar:hover {
+
+
+color: var(--gold);
+
+
+}
+
+.modal-conteudo form {
+
+
+display: flex;
+
+flex-direction: column;
+
+gap: 10px;
+
+
+}
+
+.modal-conteudo label {
+
+
+color: var(--gold);
+
+font-size: 14px;
+
+margin-top: 8px;
+
+
+}
+
+.modal-conteudo input,
+.modal-conteudo select,
+.modal-conteudo textarea {
+
+
+width: 100%;
+
+padding: 14px;
+
+background: #0e0e0e;
+
+border: 1px solid #333;
+
+color: white;
+
+font-family: 'Inter', sans-serif;
+
+outline: none;
+
+transition: .3s;
+
+
+}
+
+.modal-conteudo input:focus,
+.modal-conteudo select:focus,
+.modal-conteudo textarea:focus {
+
+
+border-color: var(--gold);
+
+
+}
+
+.modal-conteudo textarea {
+
+
+min-height: 120px;
+
+resize: vertical;
+
+
+}
+
+.modal-conteudo select {
+
+
+cursor: pointer;
+
+
+}
+
+.modal-botao {
+
+
+margin-top: 20px;
+
+width: 100%;
+
+padding: 15px;
+
+
+}
+
+@media(max-width:600px) {
+
+
+.modal-conteudo {
+
+    padding: 30px 20px;
+
+}
+
+.modal-conteudo h2 {
+
+    font-size: 32px;
+
+}
+
+
+}
