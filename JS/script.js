@@ -46,6 +46,7 @@ const botoesPrimarios = document.querySelectorAll(".btn-primary");
 
 const btnEspecialidades = document.querySelector(".btn-secondary");
 
+const btnCadastro = document.querySelector("#btnCadastro");
 
 // ==========================================
 // FUNÇÃO PARA CRIAR MODAL
@@ -200,6 +201,72 @@ if (btnLogin) {
 
 }
 
+// ==========================================
+// FORMULÁRIO DE CADASTRO
+// ==========================================
+
+function abrirCadastro() {
+
+    const modal = criarModal(`
+
+        <h2>Realizar Cadastro</h2>
+
+        <p class="modal-descricao">
+            Crie sua conta para acessar a área do cliente.
+        </p>
+
+        <form id="formCadastro">
+
+            <label>Nome completo</label>
+            <input type="text" id="nomeCadastro" placeholder="Seu nome completo" required>
+
+            <label>E-mail</label>
+            <input type="email" id="emailCadastro" placeholder="seuemail@email.com" required>
+
+            <label>Telefone</label>
+            <input type="tel" id="telefoneCadastro" placeholder="(31) 99999-9999" required>
+
+            <label>Senha</label>
+            <input type="password" id="senhaCadastro" placeholder="Crie uma senha" required minlength="6">
+
+            <label>Confirmar senha</label>
+            <input type="password" id="confirmarSenhaCadastro" placeholder="Repita a senha" required>
+
+            <button type="submit" class="btn-primary modal-botao">
+                Criar Conta
+            </button>
+
+        </form>
+
+    `);
+
+    const form = modal.querySelector("#formCadastro");
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const nome = modal.querySelector("#nomeCadastro").value;
+        const email = modal.querySelector("#emailCadastro").value;
+        const telefone = modal.querySelector("#telefoneCadastro").value;
+        const senha = modal.querySelector("#senhaCadastro").value;
+        const confirmar = modal.querySelector("#confirmarSenhaCadastro").value;
+
+        if (senha !== confirmar) {
+            alert("As senhas não coincidem.");
+            return;
+        }
+
+        alert(
+            "Cadastro realizado com sucesso!\n\n" +
+            "Bem-vindo(a), " + nome + "."
+        );
+
+        fecharModal(modal);
+
+    });
+
+}
 
 // ==========================================
 // FORMULÁRIO DE CONSULTORIA
@@ -367,12 +434,15 @@ botoesPrimarios.forEach(function (botao) {
 
     botao.addEventListener("click", function () {
 
-        abrirConsultoria();
+        if (botao.id === "btnCadastro") {
+            abrirCadastro();
+        } else {
+            abrirConsultoria();
+        }
 
     });
 
 });
-
 
 // ==========================================
 // BOTÃO ESPECIALIDADES
