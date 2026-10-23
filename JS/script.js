@@ -5,13 +5,43 @@ document.querySelectorAll('.navbar a[href^="#"]').forEach(function (link) {
     link.addEventListener("click", function (event) {
         event.preventDefault();
         const destino = link.getAttribute("href");
-        if (destino === "#") { window.scrollTo({ top: 0, behavior: "smooth" }); return; }
-        const el = document.querySelector(destino);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
+
+        if (destino === "#") {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+            return;
+        }
+
+        const elemento = document.querySelector(destino);
+
+        if (elemento) {
+            elemento.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
     });
+
 });
 
-// MODAL
+
+// ==========================================
+// BOTÕES
+// ==========================================
+
+const btnLogin = document.querySelector(".btn-login");
+
+const botoesPrimarios = document.querySelectorAll(".btn-primary");
+
+const btnEspecialidades = document.querySelector(".btn-secondary");
+
+
+// ==========================================
+// FUNÇÃO PARA CRIAR MODAL
+// ==========================================
+
 function criarModal(conteudo) {
     const modal = document.createElement("div");
     modal.className = "modal";
@@ -27,16 +57,93 @@ function criarModal(conteudo) {
 }
 function fecharModal(modal) {
     modal.classList.remove("ativo");
-    setTimeout(function () { modal.remove(); }, 300);
+
+    setTimeout(function () {
+        modal.remove();
+    }, 300);
+
 }
 
-// LOGIN — agora leva para a Área do Cliente (login por CPF + senha)
-const btnLogin = document.querySelector(".btn-login");
-if (btnLogin && btnLogin.tagName === "BUTTON") {
-    btnLogin.addEventListener("click", function () { location.href = "area-cliente.html"; });
+
+// ==========================================
+// LOGIN
+// ==========================================
+
+if (btnLogin) {
+
+    btnLogin.addEventListener("click", function () {
+
+        const modal = criarModal(`
+
+            <h2>Área do Cliente</h2>
+
+            <p class="modal-descricao">
+                Entre para acessar sua área de atendimento.
+            </p>
+
+            <form id="formLogin">
+
+                <label>E-mail</label>
+
+                <input 
+                    type="email"
+                    id="emailLogin"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+                <label>Senha</label>
+
+                <input 
+                    type="password"
+                    id="senhaLogin"
+                    placeholder="Digite sua senha"
+                    required
+                >
+
+                <button type="submit" class="btn-primary modal-botao">
+                    Entrar
+                </button>
+
+            </form>
+
+        `);
+
+
+        const formLogin = modal.querySelector("#formLogin");
+
+        formLogin.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const email = modal.querySelector("#emailLogin").value;
+            const senha = modal.querySelector("#senhaLogin").value;
+
+            if (email === "" || senha === "") {
+
+                alert("Preencha todos os campos.");
+
+                return;
+            }
+
+            alert(
+                "Login realizado com sucesso!\n\n" +
+                "E-mail: " + email
+            );
+
+            fecharModal(modal);
+
+        });
+
+    });
+
 }
 
-// CONSULTORIA (modal rápido) — envia para a API via enviarSolicitacao()
+
+// ==========================================
+// FORMULÁRIO DE CONSULTORIA
+// ==========================================
+
 function abrirConsultoria() {
     const modal = criarModal(`
         <h2>Solicitar Consultoria</h2>
@@ -65,12 +172,28 @@ function abrirConsultoria() {
             ? "Solicitação enviada!\nProtocolo: " + r.protocolo
             : "Não conseguimos conectar ao servidor agora.\nProtocolo: " + r.protocolo + "\nUse a página Consultoria para enviar por WhatsApp ou e-mail.");
         fecharModal(modal);
+
     });
+
 }
-document.querySelectorAll('button.btn-primary[type="button"]').forEach(function (b) {
-    b.addEventListener("click", abrirConsultoria);
+
+
+// ==========================================
+// BOTÕES PRINCIPAIS
+// ==========================================
+
+botoesPrimarios.forEach(function (botao) {
+
+    botao.addEventListener("click", function () {
+
+        abrirConsultoria();
+
+    });
+
 });
 
+
+// ==========================================
 // BOTÃO ESPECIALIDADES
 const btnEsp = document.querySelector(".btn-secondary");
 if (btnEsp) btnEsp.addEventListener("click", function () {
