@@ -10,6 +10,7 @@
 <title>Bristol & Carter | Consultoria Jurídica</title>
 
 <link rel="stylesheet" href="../CSS/style.css">
+<link rel="stylesheet" href="../CSS/extras.css">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +23,7 @@
 
 </head>
 
-<body>
+<body data-page="home">
 
 
 <!-- =========================
@@ -46,19 +47,7 @@
     </div>
 
 
-    <nav class="navbar">
-
-        <a href="#inicio">Início</a>
-
-        <a href="#especialidades">Especialidades</a>
-
-        <a href="#advogados">Advogados</a>
-
-        <a href="#consultoria">Consultoria</a>
-
-        <a href="#contato">Contato</a>
-
-    </nav>
+    <nav class="navbar"><a href="#inicio">Início</a><a href="areas.html">Áreas de Atuação</a><a href="equipe.html">Advogados</a><a href="artigos.html">Artigos</a><a href="consultoria.html">Consultoria</a><a href="area-cliente.html">Área do Cliente</a><a href="#contato">Contato</a></nav>
 
 
     <div class="header-buttons">
@@ -125,6 +114,8 @@
 </section>
 
 
+
+<section class="stats"><div><strong data-count="5">0</strong>Áreas de atuação</div><div><strong data-count="5">0</strong>Advogados</div><div><strong data-count="5">0</strong>Dias de atendimento por semana</div></section>
 
 <!-- =========================
      SOBRE
@@ -277,6 +268,7 @@
 
     </div>
 
+<p style="text-align:center;margin-top:50px"><a class="btn-secondary" href="areas.html" style="display:inline-block;padding:13px 26px;text-decoration:none">Ver todas as áreas</a></p>
 </section>
 
 
@@ -285,42 +277,7 @@
      ADVOGADOS
 ========================== -->
 
-<section class="lawyers" id="advogados">
-
-    <div class="section-title">
-
-        <span>
-            Equipe Jurídica
-        </span>
-
-        <h2>
-            Nossos Advogados
-        </h2>
-
-    </div>
-
-
-    <div class="lawyers-container">
-
-
-        <div class="lawyer-card">
-
-            <div class="lawyer-image"></div>
-
-            <h3>
-                Dr. Bernardo Carter
-            </h3>
-
-            <span>
-                Direito Empresarial
-            </span>
-
-            <p>
-                Especialista em consultoria corporativa
-                e contratos empresariais.
-            </p>
-
-        </div>
+<section class="lawyers" id="advogados"><div class="section-title"><span>Equipe Jurídica</span><h2>Nossos Advogados</h2></div><div class="lawyers-container"><div class="lawyer-card"><div class="lawyer-image"></div><h3>Dr. Bernardo Carter</h3><span>Direito Empresarial</span><p>Especialista em consultoria corporativa e contratos empresariais.</p></div><div class="lawyer-card"><div class="lawyer-image"></div><h3>Dr. Flávio Bristol</h3><span>Direito Tributário</span><p>Atuação estratégica em planejamento tributário e defesa fiscal.</p></div><div class="lawyer-card"><div class="lawyer-image"></div><h3>Dr. Gustavo Luiz</h3><span>Direito Penal</span><p>Defesa criminal especializada com atendimento personalizado.</p></div><div class="lawyer-card"><div class="lawyer-image"></div><h3>Dr. Thales Vieira</h3><span>Direito Digital</span><p>Internet, proteção de dados, crimes digitais e tecnologia.</p></div><div class="lawyer-card"><div class="lawyer-image"></div><h3>Dr. Vitor</h3><span>Direito Imobiliário</span><p>Consultoria e assessoria em imóveis e direitos reais.</p></div></div><p style="text-align:center;margin-top:50px"><a class="btn-secondary" href="equipe.html" style="display:inline-block;padding:13px 26px;text-decoration:none">Conhecer a equipe</a></p></section>
 
 
         <div class="lawyer-card">
@@ -516,7 +473,9 @@
      JAVASCRIPT
 ========================== -->
 
+<script src="../JS/api.js"></script>
 <script src="../JS/script.js"></script>
+<script src="../JS/extras.js"></script>
 
 
 </body>
