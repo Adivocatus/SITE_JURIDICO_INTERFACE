@@ -322,13 +322,82 @@ body{
     border-color:var(--gold);
 }
 
-.lawyer-image{
+.lawyer-image1{
     width:100%;
     height:320px;
 
     background:#222;
 
     margin-bottom:25px;
+    background-image: url("../IMAGE/foto_adv_1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lawyer-image2{
+    width:100%;
+    height:320px;
+
+    background:#222;
+
+    margin-bottom:25px;
+    background-image: url("../IMAGE/foto_adv_2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lawyer-image3{
+    width:100%;
+    height:320px;
+
+    background:#222;
+
+    margin-bottom:25px;
+    background-image: url("../IMAGE/foto_adv_3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lawyer-image4{
+    width:100%;
+    height:320px;
+
+    background:#222;
+
+    margin-bottom:25px;
+    background-image: url("../IMAGE/foto_adv_4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lawyer-image5{
+    width:100%;
+    height:320px;
+
+    background:#222;
+
+    margin-bottom:25px;
+    background-image: url("../IMAGE/foto_adv_5.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.lawyer-image6{
+    width:100%;
+    height:320px;
+
+    background:#222;
+
+    margin-bottom:25px;
+    background-image: url("../IMAGE/foto_adv_6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .lawyer-card h3{
